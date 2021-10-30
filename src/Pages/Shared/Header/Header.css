@@ -1,0 +1,11 @@
+.navbar-light .navbar-nav .nav-link{
+    color: #202f59;
+    border-bottom: 2px solid #dc824e00;
+    transition: all .3s ease;
+    margin-left: 10px;
+}
+
+.navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link:hover{
+    color: #dc834e;
+    border-bottom: 2px solid #dc824e;
+}

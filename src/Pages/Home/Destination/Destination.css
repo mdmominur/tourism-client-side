@@ -1,0 +1,17 @@
+.card{
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+.card img{
+    border-radius: 25px;
+}
+.card .duration{
+    color: #dc834e;
+    border: 2px solid #dc834e;
+    display: inline-block;
+    padding: 3px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+}

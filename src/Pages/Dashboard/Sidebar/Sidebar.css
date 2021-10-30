@@ -1,0 +1,21 @@
+.sidebar{
+    background-color:rgba(255, 235, 205, 0.692);
+}
+
+#menu{
+    color:#dc834e ;
+}
+.menu i{
+    color:#dc834e ;
+}
+.nav-pills .nav-link{
+    padding:10px 10px;
+}
+.nav-pills .nav-link.active{
+    background-color: #dc834e;
+    
+}
+.nav-pills .nav-link.active i, .nav-pills .nav-link.active span{
+    color: #fff;
+    
+}
