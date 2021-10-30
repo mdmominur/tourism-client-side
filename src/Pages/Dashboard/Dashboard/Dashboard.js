@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import DdProvider from '../../../Context/DdProvider';
 import AddDestination from '../AddDestination/AddDestination';
 import Destinations from '../Destinations/Destinations';
 import Main from '../Main/Main';
@@ -10,8 +11,11 @@ import Sidebar from '../Sidebar/Sidebar';
 const Dashboard = () => {
     return (
         <div>
+            
                     <div className="container mt-4">
                         <div className="row flex-nowrap">
+                        <DdProvider>
+
                             <BrowserRouter>
                                 <Sidebar></Sidebar>
                                 <Switch>
@@ -32,6 +36,7 @@ const Dashboard = () => {
                                     </Route>
                                 </Switch>
                             </BrowserRouter>
+                        </DdProvider>
                            
                         </div>
                     </div>

@@ -13,7 +13,7 @@ const Sidebar = () => {
                                     <ul className="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start menu" id="menu">
                                         <li className="nav-item">
                                             <NavLink to="/dashboard" exact className="nav-link text-white" activeClassName="active">
-                                            <i class="fas fa-tachometer-alt"></i><span className="ms-1 d-none d-sm-inline text-brand">Dashboard</span>
+                                            <i className="fas fa-tachometer-alt"></i><span className="ms-1 d-none d-sm-inline text-brand">Dashboard</span>
                                             </NavLink>
                                             <NavLink to="/dashboard/destinations" className="nav-link text-white" activeClassName="active">
                                             <i className="fas fa-plane"></i> <span className="ms-1 d-none d-sm-inline text-brand">Destinaions</span>
