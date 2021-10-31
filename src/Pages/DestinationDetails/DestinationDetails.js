@@ -9,7 +9,7 @@ import './DestinationDetails.css';
 
 const DestinationDetails = () => {
     const [destination, setDestination] = useState({});
-    const { register, handleSubmit} = useForm();
+    const { register, handleSubmit, reset} = useForm();
     const {id} = useParams();
     const {user} = useAuth();
     const {handleBookingPost, resetForm, setResetForm} = useDatabase();
@@ -20,16 +20,18 @@ const DestinationDetails = () => {
         .then(result => setDestination(result.data))
     }, []);
     const onSubmit = data => {
+        data.name = user.displayName;
         data.email = user.email;
-        handleBookingPost(data)
+        const result = handleBookingPost(data);
+        if(result){
+            reset();
+        }
        };
 
-       if(resetForm){
-        
-        setTimeout(()=>{
-            setResetForm(false);
-        }, 2000)
-       }
+       const handleAlert = () => {
+        setResetForm(false);
+       };
+
 
     return (
         <div className="container mt-5">
@@ -37,9 +39,7 @@ const DestinationDetails = () => {
                <div className="col-md-9">
                    <div className=" p-4">
                     <h1>Tour Details</h1>
-                    {resetForm ? <div className="alert alert-success alert-dismissible fade show" role="alert">
-                        <strong>Destination Added</strong>
-                        </div>: ''}
+                    
                     <div className="row">
                         <div className="col-md-8">
                             <img className="w-100 rounded" src={destination.imgUrl} alt={destination.title} />
@@ -63,13 +63,17 @@ const DestinationDetails = () => {
                <div className="col-md-3">
                    <div className="shadow p-3">
                     <h1>Book Tour</h1>
+                    {resetForm ? <div className="alert alert-success alert-dismissible fade show" role="alert">
+                        <strong>Tour Booked</strong>
+                        <button type="button" className="btn-close" onClick={handleAlert} aria-label="Close"></button>
+                        </div>: ''}
                     {
                         destination._id 
                         ? 
                         <form onSubmit={handleSubmit(onSubmit)}>
                             <div className="row">
                             <div className="col-md-12">
-                                <input className="form-control" placeholder="Name" {...register("name", { required: true })} />
+                                <input className="form-control" placeholder="Name" {...register("name", { required: true })} value={user.displayName}/>
                                 <input className="form-control" type="hidden" {...register("des_id", { required: true })} value={destination._id} />
                                 
                             </div>

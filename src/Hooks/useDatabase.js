@@ -38,12 +38,10 @@ const useDatabase = () => {
                 setResetForm(true);
             }
         });
+
+        return true;
     }
 
-    
-    
-
-    
 
     //Delete bookings
     const deleteBooking = id =>{
@@ -52,7 +50,6 @@ const useDatabase = () => {
             axios.delete(`https://tourism-server-by-mominur.herokuapp.com/bookings/${id}`)
             .then(res => {
                 if(res.data.deletedCount){
-                    alert('Booking Deleted');
                     const updatedBookings = bookings.filter(book => book._id !== id);
                     setBookings(updatedBookings);
 
@@ -62,6 +59,9 @@ const useDatabase = () => {
             });
         }
     }
+
+
+
 
     return {
         handleCreateDestinaitonPost,
@@ -76,6 +76,9 @@ const useDatabase = () => {
         deleteBooking,
         
     };
+
+
+    
 }
 
 export default useDatabase;

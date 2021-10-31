@@ -19,7 +19,7 @@ const Header = () => {
                     <Nav.Link as={NavLink} className="fw-bold" activeClassName="active" exact to="/">Home</Nav.Link>
                    
                     {
-                        user.email ? <><Nav.Link as={NavLink} className="fw-bold" activeClassName="active" to="/dashboard">Dashboard</Nav.Link> <button className="ms-3 button-brand mt-3 mt-md-0" onClick={logout}>Logout</button> </> : <Nav.Link as={NavLink} className="fw-bold" activeClassName="active" to="/login">Login</Nav.Link>
+                        user.email ? <><Nav.Link as={NavLink} className="fw-bold" activeClassName="active" to="/dashboard">Dashboard</Nav.Link> <span className="d-inline-block py-2 ms-4 mt-3 mt-md-0 text-center">{user.displayName}</span> <button className="ms-3 button-brand mt-1 mt-md-0" onClick={logout}>Logout</button> </> : <Nav.Link as={NavLink} className="fw-bold" activeClassName="active" to="/login">Login</Nav.Link>
                     }
                     
                     

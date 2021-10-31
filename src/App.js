@@ -5,6 +5,7 @@ import './App.css';
 import AuthProvider from './Context/AuthProvider';
 import Dashboard from './Pages/Dashboard/Dashboard/Dashboard';
 import DestinationDetails from './Pages/DestinationDetails/DestinationDetails';
+import Footer from './Pages/Footer/Footer';
 import Home from './Pages/Home/Home/Home';
 import Login from './Pages/Login/Login/Login';
 import NotFound from './Pages/NotFound/NotFound';
@@ -34,6 +35,7 @@ function App() {
                 <NotFound></NotFound>
               </Route>
             </Switch>
+            <Footer></Footer>
           </BrowserRouter>
 
       </AuthProvider>

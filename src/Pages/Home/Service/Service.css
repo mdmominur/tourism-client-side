@@ -1,0 +1,9 @@
+i.service-icon{
+    display: inline-block;
+    width: 65px;
+    font-size: 50px;
+}
+
+.singleService{
+    background-color: rgba(255, 235, 205, 0.425);
+}

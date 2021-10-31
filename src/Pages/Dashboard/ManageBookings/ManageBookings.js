@@ -10,7 +10,7 @@ const ManageBookings = () => {
         <div className="col-10 col-md-9 ">
             <div className="py-5 px-3 px-md-5 shadow-lg rounded">
                 <header className="d-flex flex-wrap justify-content-between">
-                    <h1>Manage Bookings</h1>
+                    <h1>Manage All Bookings</h1>
                 </header>
                 
                 <div className="mt-5 overflow-auto">
@@ -21,7 +21,6 @@ const ManageBookings = () => {
                                 <th>Title</th>
                                 <th>Email</th>
                                 <th>Cost</th>
-                                <th>Your Address</th>
                                 <th>Status</th>
                                 <th colSpan="2">Action</th>
                             </tr>
@@ -31,7 +30,7 @@ const ManageBookings = () => {
                             bookings.length && destinations.length
                             ?
                             bookings.map(booking => <Booking booking={booking} destination={destinations.find(des => des._id === booking.des_id)} manageBooking={true} key={booking._id}></Booking>)
-                            :<tr><td><div className="text-center mt-5"><Spinner animation="border" variant="dark" /></div></td></tr>
+                            :<tr><td colSpan="10"><div className="text-center mt-5 w-100"><Spinner animation="border" variant="dark" /></div></td></tr>
                         }
                         </tbody>
                         <tfoot></tfoot>

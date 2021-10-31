@@ -1,11 +1,10 @@
 
 import axios from "axios";
-import { useState } from "react";
 import useDb from "../../../Hooks/useDb";
 
 const Booking = ({booking, destination, manageBooking}) => {
     const {imgUrl, title, cost} = destination;
-    const {_id,status, address, email} = booking;
+    const {_id,status, email} = booking;
     const {deleteBooking, bookings, setBookings} = useDb();
     //Handle delete booking
     const handleDeleteBooking = id =>{
@@ -40,7 +39,6 @@ const Booking = ({booking, destination, manageBooking}) => {
             <td>{title}</td>
             <td>{email}</td>
             <td>{cost}</td>
-            <td>{address}</td>
             <td>{status ? "Apporved": "Pending"}</td>
             {
                 manageBooking && !status && <td><button className="btn btn-sm btn-success" onClick={() => handleUpdateStatus(_id)}>Approve</button></td>

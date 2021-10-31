@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { Spinner } from 'react-bootstrap';
 import useAuth from '../../../Hooks/useAuth';
 import useDatabase from '../../../Hooks/useDatabase';
@@ -30,7 +30,6 @@ const MyBookings = () => {
                                 <th>Title</th>
                                 <th>Email</th>
                                 <th>Cost</th>
-                                <th>Your Address</th>
                                 <th>Status</th>
                                 <th>Action</th>
                             </tr>
@@ -40,7 +39,7 @@ const MyBookings = () => {
                             myBookings.length && destinations.length
                             ?
                             myBookings.map(booking => <Booking booking={booking} destination={destinations.find(des => des._id === booking.des_id)} manageBooking={false} key={booking._id}></Booking>)
-                            :<tr><td><div className="text-center mt-5"><Spinner animation="border" variant="dark" /></div></td></tr>
+                            :<tr><td colSpan="10"><div className="text-center mt-5 w-100"><Spinner animation="border" variant="dark" /></div></td></tr>
                         }
                         </tbody>
                         <tfoot></tfoot>
