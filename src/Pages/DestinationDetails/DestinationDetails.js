@@ -16,7 +16,7 @@ const DestinationDetails = () => {
 
     
     useEffect(()=> {
-        axios.get(`https://tourism-server-by-mominur.herokuapp.com/destinations/${id}`)
+        axios.get(`https://tourism-api.mominur.net/destinations/${id}`)
         .then(result => setDestination(result.data))
     }, []);
     const onSubmit = data => {

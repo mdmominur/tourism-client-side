@@ -6,7 +6,7 @@ const WhyUs = () => {
     const [services, setServices] = useState([]);
         //Services
         useEffect(()=>{
-            axios.get('https://tourism-server-by-mominur.herokuapp.com/services')
+            axios.get('https://tourism-api.mominur.net/services')
             .then(res => setServices(res.data));
         }, []);
     return (

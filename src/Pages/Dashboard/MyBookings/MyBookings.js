@@ -11,7 +11,7 @@ const MyBookings = () => {
     const {user} = useAuth();
     //Get my bookings
     useEffect(()=>{
-        axios.get(`https://tourism-server-by-mominur.herokuapp.com/my-bookings/${user.email}`)
+        axios.get(`https://tourism-api.mominur.net/my-bookings/${user.email}`)
         .then(res => setMyBookings(res.data));
     },[]);
     const {destinations} = useDatabase();

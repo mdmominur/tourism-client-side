@@ -14,7 +14,7 @@ const Booking = ({booking, destination, manageBooking}) => {
 
     //Handle update Status
     const handleUpdateStatus = id => {
-        axios.put(`https://tourism-server-by-mominur.herokuapp.com/bookings/${id}`)
+        axios.put(`https://tourism-api.mominur.net/bookings/${id}`)
         .then(res =>{
             if(res.data.modifiedCount){
                 const updatedBookings = [];
